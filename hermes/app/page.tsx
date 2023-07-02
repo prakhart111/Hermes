@@ -32,6 +32,7 @@ export default function Login() {
       email,
       password,
     });
+    //@ts-ignore
     const data = await useLogin(email, password);
     console.log("Data", data);
     if (data) {
