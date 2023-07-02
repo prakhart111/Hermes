@@ -39,6 +39,7 @@ export default function Signup() {
 
   const handleSignup = async () => {
     // @ts-ignore
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const data = await useRegister(
       name,
       phoneNumber,
