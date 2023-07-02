@@ -1,3 +1,4 @@
+// @ts-ignore
 const sendSms = async (token, generatedText, nums) => {
   let headersList = {
     Accept: "*/*",

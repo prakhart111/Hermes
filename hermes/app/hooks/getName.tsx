@@ -1,4 +1,4 @@
-const getName = async (token) => {
+const getName = async (token:any) => {
   let headersList = {
     Accept: "*/*",
     Authorization: `Bearer ${token}`,

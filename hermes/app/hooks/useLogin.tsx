@@ -1,3 +1,4 @@
+// @ts-ignore
 const useLogin = async (email, password) => {
   let headersList = {
     Accept: "*/*",

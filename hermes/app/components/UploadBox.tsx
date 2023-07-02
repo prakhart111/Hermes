@@ -8,8 +8,8 @@ const raleway = Raleway({
   subsets: ["latin"],
   display: "swap",
 });
-
-export default function UploadBox({ setNums, nums }) {
+// @ts-ignore
+export default function UploadBox({ setNums, nums }:any) {
   const [data, setData] = useState([]);
 
   const handleImport = ($event: any) => {
@@ -24,6 +24,7 @@ export default function UploadBox({ setNums, nums }) {
         if (sheets.length) {
           const rows: any = utils.sheet_to_json(wb.Sheets[sheets[0]]);
           setData(rows);
+          // @ts-ignore
           setNums(rows.map((obj) => obj["Phone Number"]));
           console.log("Nums", nums);
         }

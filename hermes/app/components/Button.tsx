@@ -6,8 +6,8 @@ const raleway = Raleway({
   subsets: ["latin"],
   display: "swap",
 });
-
-export default function Button({ children, onClick }) {
+// @ts-ignore
+export default function Button({ children, onClick }:any) {
   return (
     <button
       className={`${raleway.className} bg-[#5A4AE3] text-white font-medium uppercase py-3 px-6 rounded-[30px] min-w-[200px] font-bold text-lg`}
