@@ -12,6 +12,8 @@ import useGenerator from "@/app/hooks/useGenerator";
 import Recent from "@/app/components/Recent";
 import { useUserDataContext } from "@/app/context/context";
 import Modal from "@/app/components/Modal";
+import useSendSms from "@/app/hooks/useSendSms";
+import UploadBox from "@/app/components/UploadBox";
 
 const raleway = Raleway({
   weight: ["400", "500", "700", "800"],
@@ -48,6 +50,8 @@ export default function Home() {
 
   const [visible, setVisible] = useState(false);
 
+  const [nums, setNums] = useState([]);
+
   const handleGenerate = async (e: any) => {
     e.preventDefault();
     if (prompt.trim() === "") {
@@ -74,6 +78,7 @@ export default function Home() {
       return;
     }
     if (type === "sms") {
+      const d = await useSendSms(token, generatedText, nums);
       alert("SMS sent");
     } else {
       alert("Email sent");
@@ -241,7 +246,7 @@ export default function Home() {
               />
             </div>
           )}
-          <div className="border-black border-2 flex flex-col mt-28 py-3 px-4 gap-y-3">
+          {/* <div className="border-black border-2 flex flex-col mt-28 py-3 px-4 gap-y-3">
             {type === "sms" && (
               <p className={`${raleway.className} font-medium text-base`}>
                 Upload Contact Numbers
@@ -264,7 +269,8 @@ export default function Home() {
                 Supported Formats excel, csv
               </p>
             </div>
-          </div>
+          </div> */}
+          <UploadBox nums={nums} setNums={setNums} />
         </div>
       </div>
     </div>
