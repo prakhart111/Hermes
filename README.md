@@ -34,7 +34,7 @@ style="display:flex; align-items:center; gap:5px; font-size:20px;">
 - OpenAI API
 - AWS
 - Django
-- PostgreSQL
+- SQLite3
 
 ## Documentation
 Welcome to the Hermes documentation! This guide will help you get started with Hermes, an innovative AI-powered messaging platform. With Hermes, you can effortlessly generate high-quality text and email content using OpenAI APIs, delivering personalized and engaging messages to your recipients. <br />
