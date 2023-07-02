@@ -7,7 +7,8 @@ const raleway = Raleway({
   display: "swap",
 });
 const url = "https://harsh0p.pythonanywhere.com/recommendation/";
-const Recent = ({ type, token }) => {
+// @ts-ignore
+const Recent = ({ type, token }:any) => {
   const [data, setData] = React.useState({
     saved_sms: [],
     saved_email: [],

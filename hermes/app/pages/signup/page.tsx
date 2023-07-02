@@ -93,6 +93,7 @@ export default function Signup() {
           <Select
             options={options}
             className="border-2 border-black px-3 py-5 min-w-[500px] text-lg"
+            // @ts-ignore
             value={gender?.value}
             onChange={(selectedOption) => setGender(selectedOption?.value)}
           />

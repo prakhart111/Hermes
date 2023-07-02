@@ -6,8 +6,8 @@ const raleway = Raleway({
   subsets: ["latin"],
   display: "swap",
 });
-
-const Modal = ({ visible, setVisible, handleContentSend }) => {
+// @ts-ignore
+const Modal = ({ visible, setVisible, handleContentSend }:any) => {
   return (
     <div className="absolute min-w-[500px] min-h-[300px] bg-[#cfdaf4] left-1/3 shadow-2xl top-1/4 pt-3 pl-5">
       <p className={`${raleway.className} text-xl font-medium `}>
