@@ -27,7 +27,7 @@ const Recent = ({ type, token }) => {
         data.saved_sms.reverse();
         setData(data);
       });
-  }, [type]);
+  }, [type, token]);
 
   console.log(data);
   console.log(type);
@@ -37,7 +37,7 @@ const Recent = ({ type, token }) => {
       <p className={`${raleway.className} font-bold text-center mt-16 text-xl`}>
         Recent Generations #
       </p>
-      <div className="max-h-[45vh] overflow-scroll oveflow-x-hidden">
+      <div className="max-h-[45vh] overflow-scroll overflow-x-hidden">
         {/* @ts-ignore */}
         {type === "sms"
           ? data.saved_sms.length !== 0 &&
