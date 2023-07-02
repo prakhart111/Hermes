@@ -9,7 +9,7 @@ const raleway = Raleway({
   display: "swap",
 });
 
-export default function UploadBox({ setNums }) {
+export default function UploadBox({ setNums, nums }) {
   const [data, setData] = useState([]);
 
   const handleImport = ($event: any) => {
@@ -24,7 +24,8 @@ export default function UploadBox({ setNums }) {
         if (sheets.length) {
           const rows: any = utils.sheet_to_json(wb.Sheets[sheets[0]]);
           setData(rows);
-          setNums(data.map((obj) => obj["Phone Number"]));
+          setNums(rows.map((obj) => obj["Phone Number"]));
+          console.log("Nums", nums);
         }
       };
       reader.readAsArrayBuffer(file);
