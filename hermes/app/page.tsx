@@ -33,7 +33,6 @@ export default function Login() {
       password,
     });
     const data = await useLogin(email, password);
-    console.log("Data", data);
     if (data) {
       //@ts-ignore
       setToken(data?.access);
