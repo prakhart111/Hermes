@@ -1,4 +1,4 @@
-const useSendSms = async (token, generatedText, nums) => {
+const sendSms = async (token, generatedText, nums) => {
   let headersList = {
     Accept: "*/*",
     Authorization: `Bearer ${token}`,
@@ -21,4 +21,4 @@ const useSendSms = async (token, generatedText, nums) => {
   return data;
 };
 
-export default useSendSms;
+export default sendSms;

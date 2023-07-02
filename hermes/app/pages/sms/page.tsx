@@ -12,7 +12,7 @@ import useGenerator from "@/app/hooks/useGenerator";
 import Recent from "@/app/components/Recent";
 import { useUserDataContext } from "@/app/context/context";
 import Modal from "@/app/components/Modal";
-import useSendSms from "@/app/hooks/useSendSms";
+import sendSms from "@/app/hooks/sendSms";
 import UploadBox from "@/app/components/UploadBox";
 
 const raleway = Raleway({
@@ -78,7 +78,7 @@ export default function Home() {
       return;
     }
     if (type === "sms") {
-      const d = await useSendSms(token, generatedText, nums);
+      const d = await sendSms(token, generatedText, nums);
       alert("SMS sent");
     } else {
       alert("Email sent");
