@@ -38,6 +38,7 @@ export default function Signup() {
   const router = useRouter();
 
   const handleSignup = async () => {
+    // @ts-ignore
     const data = await useRegister(
       name,
       phoneNumber,
