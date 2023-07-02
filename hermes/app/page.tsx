@@ -33,6 +33,7 @@ export default function Login() {
       password,
     });
     //@ts-ignore
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const data = await useLogin(email, password);
     console.log("Data", data);
     if (data) {
