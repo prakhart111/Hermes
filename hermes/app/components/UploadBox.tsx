@@ -47,7 +47,7 @@ export default function UploadBox({ setNums, nums, type }: any) {
       )}
       {type === "email" && (
         <p className={`${raleway.className} font-medium text-base`}>
-          Upload Email ID's
+          Upload Email ID&#39;s
         </p>
       )}
       <div className="mx-auto">
