@@ -9,7 +9,7 @@ const raleway = Raleway({
   display: "swap",
 });
 // @ts-ignore
-export default function UploadBox({ setNums, nums }:any) {
+export default function UploadBox({ setNums, nums, type }: any) {
   const [data, setData] = useState([]);
 
   const handleImport = ($event: any) => {
@@ -25,7 +25,12 @@ export default function UploadBox({ setNums, nums }:any) {
           const rows: any = utils.sheet_to_json(wb.Sheets[sheets[0]]);
           setData(rows);
           // @ts-ignore
-          setNums(rows.map((obj) => obj["Phone Number"]));
+          {
+            type === "sms" && setNums(rows.map((obj) => obj["Phone Number"]));
+          }
+          {
+            type === "email" && setNums(rows.map((obj) => obj["Email Id"]));
+          }
           console.log("Nums", nums);
         }
       };
@@ -35,9 +40,16 @@ export default function UploadBox({ setNums, nums }:any) {
 
   return (
     <div className="border-black border-2 flex flex-col mt-28 py-3 px-4 gap-y-3">
-      <p className={`${raleway.className} font-medium text-base`}>
-        Upload Contact Numbers
-      </p>
+      {type === "sms" && (
+        <p className={`${raleway.className} font-medium text-base`}>
+          Upload Contact Numbers
+        </p>
+      )}
+      {type === "email" && (
+        <p className={`${raleway.className} font-medium text-base`}>
+          Upload Email ID's
+        </p>
+      )}
       <div className="mx-auto">
         <input
           type="file"

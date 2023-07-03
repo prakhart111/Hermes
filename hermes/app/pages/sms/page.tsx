@@ -14,6 +14,7 @@ import { useUserDataContext } from "@/app/context/context";
 import Modal from "@/app/components/Modal";
 import sendSms from "@/app/hooks/sendSms";
 import UploadBox from "@/app/components/UploadBox";
+import sendEmail from "@/app/hooks/sendEmail";
 
 const raleway = Raleway({
   weight: ["400", "500", "700", "800"],
@@ -81,6 +82,7 @@ export default function Home() {
       const d = await sendSms(token, generatedText, nums);
       alert("SMS sent");
     } else {
+      const p = await sendEmail(token, generatedText, nums);
       alert("Email sent");
     }
     setVisible(false);
@@ -270,7 +272,7 @@ export default function Home() {
               </p>
             </div>
           </div> */}
-          <UploadBox nums={nums} setNums={setNums} />
+          <UploadBox nums={nums} setNums={setNums} type={type} />
         </div>
       </div>
     </div>
