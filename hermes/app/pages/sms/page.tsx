@@ -73,7 +73,7 @@ export default function Home() {
 
   const handleContentSend = async (e: any) => {
     e.preventDefault();
-    if (generatedText.trim() === "") {
+    if (generatedText?.trim() === "") {
       alert("Please generate text first");
       return;
     }
